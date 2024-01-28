@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+
+// Class for the course
+class Course {
+public:
+    std::string course_code;
+    std::string course_name;
+};
+
+// Class for the grade
+class Grade {
+public:
+    int mark;
+    char the_grade;
+
+    // Constructor to calculate grade based on mark
+    Grade(int m) : mark(m) {
+        calculateGrade();
+    }
+
+private:
+    void calculateGrade() {
+        if (mark > 69) {
+            the_grade = 'A';
+        } else if (mark > 59) {
+            the_grade = 'B';
+        } else if (mark > 49) {
+            the_grade = 'C';
+        } else if (mark > 39) {
+            the_grade = 'D';
+        } else {
+            the_grade = 'E';
+        }
+    }
+};
+
+// Class for the student
+class Student {
+public:
+    std::string registration_number;
+    std::string name;
+    int age;
+    Course course;
+    Grade grades;
+
+    // Function to edit student details
+    void editDetails() {}
+
+    // Function to add marks and calculate grades
+    void addMarks(int mark) {
+        grades = Grade(mark);
+    }
+};
+
+int main() {
+    const int max_students = 40;
+    Student students[max_students];
+
+    int num_students;
+    std::cout << "Enter the number of students (up to 40): ";
+    std::cin >> num_students;
+
+    for (int i = 0; i < num_students; ++i) {
+        std::cout << "Enter details for student " << i + 1 << ":" << std::endl;
+    }
+
+    return 0;
+}

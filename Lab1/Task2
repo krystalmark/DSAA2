@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+
+// Structure for the course
+struct Course {
+    std::string course_code;
+    std::string course_name;
+};
+
+// Structure for the grade
+struct Grade {
+    int mark;
+    char the_grade;
+};
+
+// Structure for the student
+struct Student {
+    std::string registration_number;
+    std::string name;
+    int age;
+    Course course;
+    Grade grades;
+};
+
+int main() {
+    const int max_students = 40;
+    Student students[max_students];
+
+    int num_students;
+    std::cout << "Enter the number of students (up to 40): ";
+    std::cin >> num_students;
+
+    for (int i = 0; i < num_students; ++i) {
+        std::cout << "Enter details for student " << i + 1 << ":" << std::endl;
+    }
+
+
+    return 0;
+}
